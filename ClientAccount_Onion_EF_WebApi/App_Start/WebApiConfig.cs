@@ -14,17 +14,17 @@ namespace ClientAccount_Onion_EF_WebApi
             // Web API configuration and services
 
             //Вызов инициализации Fluent Validation
-            //FluentValidationModelValidatorProvider.Configure(config);
+            FluentValidationModelValidatorProvider.Configure(config);
 
             //Глобальный фильтр действия - фиксирует в журнале RequestLogEntries все отправляемые на сервер запросы
             config.Filters.Add(new CustomActionFilterAttribute());
 
             //Глобальный фильтр действия
-            //config.Filters.Add(new ModelValidationFilterAttribute());
+            config.Filters.Add(new ModelValidationFilterAttribute());
 
             //Глобальный фильтр исключения - проверяет тип обрабатываемого исключения и при необходимости подменяет ответ
-            //config.Filters.Add(new CustomExceptionFilterAttribute_1());
-            //config.Filters.Add(new CustomExceptionFilterAttribute_2());
+            config.Filters.Add(new CustomExceptionFilterAttribute_1());
+            config.Filters.Add(new CustomExceptionFilterAttribute_2());
 
             //Глобальный фильтр логгирования исключений - фиксирует в журнале ExceptionLogEntries все возникающие исключения
             config.Filters.Add(new ExceptionLoggerAttribute());

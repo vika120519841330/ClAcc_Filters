@@ -31,7 +31,10 @@ namespace DependencyInjection.Modules
             //container.RegisterType<IClientRepository, ClientRepository>(new ContainerControlledLifetimeManager());
             //container.RegisterType<IAccountRepository, AccountRepository>(new ContainerControlledLifetimeManager());
 
+            //для логирования запросов в БД
             container.RegisterType<ILogRepository, LogRepository>(new ContainerControlledLifetimeManager());
+            //для логирования исключений в БД
+            container.RegisterType<IExcLogRepository, ExcLogRepository>(new ContainerControlledLifetimeManager());
 
             // для работы с  фейк-репозиторием - раскомментировать, если нужно
             container.RegisterType<IMyContextInitializationService, MyContextInitializationService>(new HierarchicalLifetimeManager());
