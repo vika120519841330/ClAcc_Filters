@@ -187,6 +187,7 @@ namespace InfrastructureServices.Contexts
             modelBuilder.ApplyConfiguration<ClientInfrastr>(new ClientConfiguration());
             modelBuilder.ApplyConfiguration<AccountInfrastr>(new AccountConfiguration());
             modelBuilder.ApplyConfiguration<RequestLogEntry>(new LogConfiguration());
+            modelBuilder.ApplyConfiguration<ExceptionInfra>(new ExcLogConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
