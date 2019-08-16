@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Domain.Interfaces;
+using Domain.Models;
+using System;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Filters;
 
 namespace ClientAccount_Onion_EF_WebApi.Attributes
@@ -33,6 +30,31 @@ namespace ClientAccount_Onion_EF_WebApi.Attributes
                 {
                     Content = new StringContent("Вы ссылаетесь на несуществующий ресурс.")
                 };
+            }
+        }
+    }
+
+    public class ExceptionLoggerAttribute : ExceptionFilterAttribute
+    {
+        // метод, извлекающий зависимость
+        public T GetService<T>(HttpActionExecutedContext excContext)
+        {
+            return (T)excContext.Request.GetDependencyScope().GetService(typeof(T));
+        }
+
+        public override void OnException(HttpActionExecutedContext excContext)
+        {
+            var exclogService = GetService<IExcLogService>(excContext);
+
+            if (excContext.Exception != null)
+            {
+                exclogService.LogExc(new ExceptionDomain()
+                {
+                    ExcMessage = excContext.Exception.Message,
+                    ExcStackTrace = excContext.Exception.StackTrace,
+                    ExcSource= excContext.Exception.Source,
+                    ExcDate = DateTime.Now
+                });
             }
         }
     }

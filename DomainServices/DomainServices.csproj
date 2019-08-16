@@ -59,6 +59,7 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\ClientService.cs" />
     <Compile Include="Services\DomainInitializationService.cs" />
+    <Compile Include="Services\ExcLogService.cs" />
     <Compile Include="Services\LogService.cs" />
   </ItemGroup>
   <ItemGroup />

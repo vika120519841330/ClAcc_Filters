@@ -8,7 +8,7 @@ namespace Infrastructure.Models
 {
     public class RequestLogEntry
     {
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public string UserIP { get; set; }
         public string Request { get; set; }
         public string Controller { get; set; }

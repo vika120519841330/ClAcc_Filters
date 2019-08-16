@@ -8,7 +8,7 @@ namespace InfrastructureServices.Configurations
     {
         public void Configure(EntityTypeBuilder<RequestLogEntry> builder)
         {
-            builder.ToTable("Logs");
+            builder.ToTable("RequestLogEntries");
 
             builder.HasKey(_ => _.UserId);
         }

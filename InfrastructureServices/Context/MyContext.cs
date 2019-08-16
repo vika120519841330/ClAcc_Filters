@@ -14,6 +14,7 @@ namespace InfrastructureServices.Contexts
         public DbSet<ClientInfrastr> Clients { get; set; }
         public DbSet<AccountInfrastr> Accounts { get; set; }
         public DbSet<RequestLogEntry> RequestLogEntries { get; set; }
+        public DbSet<ExceptionInfra> ExceptionLogEntries { get; set; }
 
         //Конструктор, инициализирующий БД
         public MyContext(DbContextOptions<MyContext> options) : base(options)

@@ -130,6 +130,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ExcLogConfiguration.cs" />
     <Compile Include="Configurations\LogConfiguration.cs" />
     <Compile Include="Configurations\AccountConfiguration.cs" />
     <Compile Include="Configurations\ClientConfiguration.cs" />
@@ -138,7 +139,8 @@
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
     <Compile Include="Repositories\FakeRepository.cs" />
-    <Compile Include="Repositories\LogRepository.cs" />
+    <Compile Include="Repositories\LogRepository .cs" />
+    <Compile Include="Repositories\ExcLogRepository.cs" />
     <Compile Include="Services\MyContextInitializationService.cs" />
   </ItemGroup>
   <ItemGroup />

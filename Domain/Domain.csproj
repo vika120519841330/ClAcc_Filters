@@ -56,9 +56,11 @@
     <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IClient.cs" />
     <Compile Include="Interfaces\IDomainInitializationService.cs" />
+    <Compile Include="Interfaces\IExcLogService.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Models\AccountDomain.cs" />
     <Compile Include="Models\ClientDomain.cs" />
+    <Compile Include="Models\ExceptionDomain.cs" />
     <Compile Include="Models\RequestInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
